@@ -1,0 +1,53 @@
+firstly created basic environment by running npm init -y in terminal
+installed all required pakages by : npm i express mongoose dotenv jsonwebtoken cookie-parser
+created src folder in it app.js :
+required express cookie parser then did middlewares for express and cookieparser and export the object or function 
+created db in src folder in that db created db.js  in db.js require mongoose created connectdb await function export that function
+create server.js require app and dotenv also db.js from src folder call the connectdb function of db file
+write the app.listen and port number stuff created
+created .env file and stored mongo uri in it from mongodb comapss (copy paste connection string)
+ models folder in that user.model.js file and now we are writing the schema of the databse in it
+ created object of the schema
+ exported the object
+created the routes folder in it one file auth.routes.js for api
+require both files in app.js
+for api we created auth.routes 
+for the main logic of api we are createing controller folder inside that folder auth.controller.js file for the logic of api's
+(middlewares and code for creating server is in app.js)
+(in models folder the data we want to store in db)
+(in db folder how server is going to connect with the database)
+(in controller folder what ever api we are creatig in rouutes folder their logic is in this folder)
+then install bcrypt package to create hash of the password 
+
+
+#hashing properties
+1. for same input there will be always same hash code
+2. once hash generated we can not convert it into simple text
+
+
+
+
+//middleware request ke ander jo bhi data ata hai wo sab read kar sakta hai
+request ke ander jo data ata hai ussee modify bhi kar sakte hai
+
+response bhi send kar sakte hai
+
+
+
+
+async function getallMusics(req,res){
+    const music=await musicModel.find().populate("artist","username email") // suppost populate method use keli tr ti actual madhe aplyala artist che username ani email pn return karun dete get method madhe anin fakt jar ka populate("artist") lihila tr tya song chya artist che saglech total details milun jatil
+    res.status(200).json({
+        message:"Musics fetched sucessfully",
+        musics:music,
+    })
+}
+
+
+
+
+
+
+//music .controller madhe limit(2) lihilela ahe mhnje eka veli kiti music dakhu shakto to count max count ahe avaiable nastil tr ahet tevdhe dakhwtay
+
+//skip je ahe te skip karnyasathi mhnje jar ka skip 1 kela tr database madhla 1 no cha skip hoil bakiche return hotil
